@@ -105,7 +105,7 @@ renderNormal = () =>{
          </div> 
 
          <div className="item-display">
-            <h1>List of Items</h1>
+            <h1>List of Users</h1>
             <p>{users}</p>
           </div>
 
@@ -166,7 +166,7 @@ renderEdit =() =>{
          </div> 
 
          <div className="item-display">
-            <h1>List of Items</h1>
+            <h1>List of Users</h1>
             <p>{users}</p>
           </div>
 
