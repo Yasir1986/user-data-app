@@ -15,10 +15,10 @@ class Main extends Component {
 
 edit = (e) =>{
   let index=e.target.value;
-  let id =this.props.products[index].id
-  let name =this.props.products[index].name;
-  let email=this.props.products[index].email;
-  let phone=this.props.products[index].phone;
+  let id =this.props.users[index].id
+  let name =this.props.users[index].name;
+  let email=this.props.users[index].email;
+  let phone=this.props.users[index].phone;
   this.setState({
           index,
           id:id,
@@ -54,7 +54,7 @@ handleUpdateInput = (e) => {
 }
 
 renderNormal = () =>{
-   let products= this.props.products.map((product, index) => 
+   let users= this.props.users.map((product, index) => 
                                         <li key={index} className="list-items-display"> 
                                          <b>Id:</b> {product.id} <br /> 
                                          <b>Name:</b> {product.name} <br />
@@ -107,7 +107,7 @@ renderNormal = () =>{
 
          <div className="item-display">
             <h1>List of Items</h1>
-            <p>{products}</p>
+            <p>{users}</p>
           </div>
 
       </div>
@@ -115,7 +115,7 @@ renderNormal = () =>{
 }
 
 renderEdit =() =>{
-     let products= this.props.products.map((product, index) => 
+     let users= this.props.users.map((product, index) => 
                                         <li key={index.toString()} className="list-items-display"> 
                                         <b>Id:</b> {product.id} <br />
                                         <b>Name:</b> {product.name} <br />
@@ -168,7 +168,7 @@ renderEdit =() =>{
 
          <div className="item-display">
             <h1>List of Items</h1>
-            <p>{products}</p>
+            <p>{users}</p>
           </div>
 
       </div>
