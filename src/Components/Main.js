@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import SimpleReactValidator from 'simple-react-validator';
 
 class Main extends Component {
   constructor(props){
@@ -9,9 +9,11 @@ class Main extends Component {
           name : "",
           email: "",
           phone: "",
-          editing: false
-        }
+          editing: false,
+          validator: ""
+      }
     }
+
 
 edit = (e) =>{
   let index=e.target.value;
@@ -52,6 +54,20 @@ handleUpdateInput = (e) => {
         }, this.state.index)
 }
 
+submitForm() {
+  if (this.validator.allValid()) {
+    alert('You submitted the form and stuff!');
+  } else {
+    this.validator.showMessages();
+    // rerender to show messages for the first time
+    // you can use the autoForceUpdate option to do this automatically`
+    this.forceUpdate();
+  }
+}
+
+  validator = new SimpleReactValidator({autoForceUpdate: this});
+
+
 renderNormal = () =>{
    let users= this.props.users.map((product, index) => 
                                         <li key={index} className="list-items-display"> 
@@ -69,15 +85,21 @@ renderNormal = () =>{
 
           <label>
                 Id:
-                <input type="text" 
+                <input 
+                      min="1" 
+                      max="20"
+                      type="number" 
                        name="id"
+                       placeholder="Id"
                        value={this.state.id}
                        onChange={this.onChange} />
             </label>
 
             <label>
                 Name:
-                <input type="text" 
+                <input 
+                      placeholder="Name"
+                      type="text" 
                        name="name"
                        value={this.state.name}
                        onChange={this.onChange} />
@@ -85,21 +107,31 @@ renderNormal = () =>{
 
             <label>
                  Email:
-                <input type="text" 
+                <input 
+                      placeholder="Email"
+                      type="email" 
                        name="email"
                        value={this.state.email}
                        onChange={this.onChange} />
+                      {this.validator.message('email', this.state.email, 'required|email')}
+
             </label>
 
             <label>
                  Phone:
-                <input type="text" 
+                <input 
+                      placeholder="GSM"
+                      type="number" 
                        name="phone"
                        value={this.state.phone}
                        onChange={this.onChange} />
             </label>
 
-        <button onClick={this.handleAddInput}>Submit</button>
+        <button 
+        type="submit"
+        onClick={this.handleAddInput}
+        
+        >Submit</button>
           </form>
 
          </div> 
@@ -126,7 +158,7 @@ renderEdit =() =>{
     return (
       <div className="main-content-area">
         <div className="form-area">
-          <form>
+          <form onSubmit="SubmitForm()">
 
           <label>
                 Id:
@@ -150,6 +182,8 @@ renderEdit =() =>{
                        name="email"
                        value={this.state.email}
                        onChange={this.onChange} />
+                      {this.validator.message('email', this.state.email, 'required|email')}
+
             </label>
 
             <label>

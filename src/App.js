@@ -14,53 +14,59 @@ class App extends Component {
           id: 1,
           name : "Maria",
           email:"maria@gmail.com",
-          phone : "0458497898"
+          phone : "0458497898",
         },
         {
           id: 2,
           name : "Gill",
           email: "gill@gmail.com",
-          phone: "0158569785"
+          phone: "0158569785",
         },
-        { id: 3,
+        { 
+          id: 3,
           name : "Jenni",
-          price: "jenni@gmail.com",
-          phone : "2578965423"
+          email: "jenni@gmail.com",
+          phone : "2578965423",
         },
-        { id: 4,
+        { 
+          id: 4,
           name : "Juha",
-          price: "juha@gmail.com",
-          phone : "8574125685"
+          email: "juha@gmail.com",
+          phone : "8574125685",
         },
-        { id: 5,
+        { 
+          id: 5,
           name : "Sunny",
-          price: "sunny@gmail.com",
-          phone : "4521565478"
+          email: "sunny@gmail.com",
+          phone : "4521565478",
         },
         { id: 6,
           name : "John",
           price: "john@gmail.com",
-          phone : "1257856325"
+          phone : "1257856325",
         },
-        { id: 7,
+        { 
+          id: 7,
           name : "Jenni",
-          price: "jenni@gmail.com",
-          phone : "2578965423"
+          email: "jenni@gmail.com",
+          phone : "2578965423",
         },
         { id: 8,
           name : "Ravin",
-          price: "ravin@gmail.com",
-          phone : "0254786623"
+          email: "ravin@gmail.com",
+          phone : "0254786623",
         },
-        { id: 9,
+        { 
+          id: 9,
           name : "Peter",
-          price: "peter@gmail.com",
-          phone : "0321458564"
+          email: "peter@gmail.com",
+          phone : "0321458564",
         },
-        { id: 10,
+        { 
+          id: 10,
           name : "ALi",
-          price: "ali@gmail.com",
-          phone : "0452145785"
+          email: "ali@gmail.com",
+          phone : "0452145785",
         }
       ]
     }
@@ -72,7 +78,6 @@ class App extends Component {
      let users = this.state.users;
          users.push (fields)
          this.setState({users});
-         console.log(this.setState({users}));
   }
 
   // functions to delete the values
@@ -83,18 +88,11 @@ class App extends Component {
      let users = this.state.users;
          users.splice (listIndex,1);
          this.setState({users});
-         console.log(this.setState({users}));
-
-
   }
 
   // functions to edit the values
   // handleEdit functions is passed to the Main.js->form as a props
   handleUpdateInput = (newUser, index) =>{
-    console.log('newUser', newUser)
-    console.log('index', index)
-
-
     this.setState(prevState => {
       return {users: [...prevState.users.slice(0, index), newUser, ...prevState.users.slice(index + 1)]}
      })
