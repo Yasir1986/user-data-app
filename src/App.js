@@ -8,19 +8,21 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      title: 'Welcome to the Inventory Application',
+      title: 'Welcome to the User Data App',
       products:[
         {
+          id: 1,
           name : "Laptop",
           price:"$500",
           description : "High Configuration"
         },
         {
+          id: 2,
           name : "Mobile",
           price: "$500",
           description : "High Configuration"
         },
-        {
+        { id: 3,
           name : "Desktop",
           price: "$500",
           description : "High Configuration"

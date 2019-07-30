@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-          <p>Welcome to the Inventory Application</p>
+          <p>Welcome to the User Data App</p>
       </div>
     );
   }

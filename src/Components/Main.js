@@ -5,24 +5,26 @@ class Main extends Component {
   constructor(props){
       super(props);
         this.state = {
+          id: "",
           name : "",
-          price: "",
-          description: "",
+          email: "",
+          phone: "",
           editing: false
-
         }
     }
 
 edit = (e) =>{
   let index=e.target.value;
+  let id =this.props.products[index].id
   let name =this.props.products[index].name;
-  let price=this.props.products[index].price;
-  let description=this.props.products[index].description;
+  let email=this.props.products[index].email;
+  let phone=this.props.products[index].phone;
   this.setState({
           index,
+          id:id,
           name:name,
-          price:price,
-          description:description,
+          email:email,
+          phone:phone,
           editing: !this.state.editing
         })
   console.log("Editing");
@@ -44,18 +46,20 @@ handleAddInput = (e) =>{
 handleUpdateInput = (e) => {
   e.preventDefault();
     this.props.handleUpdateInput({
+          id: this.state.id,
           name: this.state.name,
-          price: this.state.price,
-          description: this.state.description
+          email: this.state.email,
+          phone: this.state.phone
         }, this.state.index)
 }
 
 renderNormal = () =>{
    let products= this.props.products.map((product, index) => 
                                         <li key={index} className="list-items-display"> 
+                                         <b>Id:</b> {product.id} <br /> 
                                          <b>Name:</b> {product.name} <br />
-                                         <b>Price:</b> {product.price} <br />
-                                         <b>Description:</b> {product.description} <br />
+                                         <b>Email:</b> {product.email} <br />
+                                         <b>Phone:</b> {product.phone} <br />
                                         <button onClick={this.props.handleDelete} value={index}>Remove</button>
                                         <button onClick={this.edit} value={index} >Edit</button>
                                         </li>);
@@ -64,8 +68,16 @@ renderNormal = () =>{
         <div className="form-area">
           <form>
 
+          <label>
+                Id:
+                <input type="text" 
+                       name="id"
+                       value={this.state.id}
+                       onChange={this.onChange} />
+            </label>
+
             <label>
-                Product Name:
+                Name:
                 <input type="text" 
                        name="name"
                        value={this.state.name}
@@ -73,18 +85,18 @@ renderNormal = () =>{
             </label>
 
             <label>
-                Product Price:
+                 Email:
                 <input type="text" 
-                       name="price"
-                       value={this.state.price}
+                       name="email"
+                       value={this.state.email}
                        onChange={this.onChange} />
             </label>
 
             <label>
-                Product Description:
+                 Phone:
                 <input type="text" 
-                       name="description"
-                       value={this.state.description}
+                       name="phone"
+                       value={this.state.phone}
                        onChange={this.onChange} />
             </label>
 
@@ -105,9 +117,10 @@ renderNormal = () =>{
 renderEdit =() =>{
      let products= this.props.products.map((product, index) => 
                                         <li key={index.toString()} className="list-items-display"> 
+                                        <b>Id:</b> {product.id} <br />
                                         <b>Name:</b> {product.name} <br />
-                                        <b>Price:</b> {product.price} <br />
-                                        <b>Description:</b> {product.description} <br />
+                                        <b>Email:</b> {product.email} <br />
+                                        <b>Phone:</b> {product.phone} <br />
                                         <button onClick={this.props.handleDelete} value={index}>Remove</button>
                                         <button onClick={this.edit} value={index.toString()}>Edit</button>
                                         </li>);
@@ -116,8 +129,16 @@ renderEdit =() =>{
         <div className="form-area">
           <form>
 
+          <label>
+                Id:
+                <input type="text" 
+                       name="id"
+                       value={this.state.id}
+                       onChange={this.onChange} />
+            </label>
+
             <label>
-                Product Name:
+                Name:
                 <input type="text" 
                        name="name"
                        value={this.state.name}
@@ -125,18 +146,18 @@ renderEdit =() =>{
             </label>
 
             <label>
-                Product Price:
+                 Email:
                 <input type="text" 
-                       name="price"
-                       value={this.state.price}
+                       name="email"
+                       value={this.state.email}
                        onChange={this.onChange} />
             </label>
 
             <label>
-                Product Description:
+                 Phone:
                 <input type="text" 
-                       name="description"
-                       value={this.state.description}
+                       name="phone"
+                       value={this.state.phone}
                        onChange={this.onChange} />
             </label>
 
