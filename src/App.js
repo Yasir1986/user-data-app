@@ -90,13 +90,13 @@ class App extends Component {
 
   // functions to edit the values
   // handleEdit functions is passed to the Main.js->form as a props
-  handleUpdateInput = (newProduct, index) =>{
-    console.log('newProduct', newProduct)
+  handleUpdateInput = (newUser, index) =>{
+    console.log('newUser', newUser)
     console.log('index', index)
 
 
     this.setState(prevState => {
-      return {users: [...prevState.users.slice(0, index), newProduct, ...prevState.users.slice(index + 1)]}
+      return {users: [...prevState.users.slice(0, index), newUser, ...prevState.users.slice(index + 1)]}
      })
   }
 
