@@ -27,7 +27,6 @@ edit = (e) =>{
           phone:phone,
           editing: !this.state.editing
         })
-  console.log("Editing");
 }    
 
 onChange = (e) =>{

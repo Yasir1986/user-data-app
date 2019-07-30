@@ -26,6 +26,41 @@ class App extends Component {
           name : "Jenni",
           price: "jenni@gmail.com",
           phone : "2578965423"
+        },
+        { id: 4,
+          name : "Juha",
+          price: "juha@gmail.com",
+          phone : "8574125685"
+        },
+        { id: 5,
+          name : "Sunny",
+          price: "sunny@gmail.com",
+          phone : "4521565478"
+        },
+        { id: 6,
+          name : "John",
+          price: "john@gmail.com",
+          phone : "1257856325"
+        },
+        { id: 7,
+          name : "Jenni",
+          price: "jenni@gmail.com",
+          phone : "2578965423"
+        },
+        { id: 8,
+          name : "Ravin",
+          price: "ravin@gmail.com",
+          phone : "0254786623"
+        },
+        { id: 9,
+          name : "Peter",
+          price: "peter@gmail.com",
+          phone : "0321458564"
+        },
+        { id: 10,
+          name : "ALi",
+          price: "ali@gmail.com",
+          phone : "0452145785"
         }
       ]
     }
