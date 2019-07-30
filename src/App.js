@@ -9,23 +9,23 @@ class App extends Component {
     super(props);
     this.state = {
       title: 'Welcome to the User Data App',
-      products:[
+      users:[
         {
           id: 1,
-          name : "Laptop",
-          price:"$500",
-          description : "High Configuration"
+          name : "Maria",
+          email:"maria@gmail.com",
+          phone : "0458497898"
         },
         {
           id: 2,
-          name : "Mobile",
-          price: "$500",
-          description : "High Configuration"
+          name : "Gill",
+          email: "gill@gmail.com",
+          phone: "0158569785"
         },
         { id: 3,
-          name : "Desktop",
-          price: "$500",
-          description : "High Configuration"
+          name : "Jenni",
+          price: "jenni@gmail.com",
+          phone : "2578965423"
         }
       ]
     }
@@ -34,10 +34,10 @@ class App extends Component {
  // functions to add the values
  // handleAdd functions is passed to the Main.js->form as a props
   handleAddInput = (fields) =>{
-     let products = this.state.products;
-         products.push (fields)
-         this.setState({products});
-         console.log(this.setState({products}));
+     let users = this.state.users;
+         users.push (fields)
+         this.setState({users});
+         console.log(this.setState({users}));
   }
 
   // functions to delete the values
@@ -45,10 +45,10 @@ class App extends Component {
   handleDelete = (e) =>{
      let listIndex = e.target.value;
      console.log(listIndex);
-     let products = this.state.products;
-         products.splice (listIndex,1);
-         this.setState({products});
-         console.log(this.setState({products}));
+     let users = this.state.users;
+         users.splice (listIndex,1);
+         this.setState({users});
+         console.log(this.setState({users}));
 
 
   }
@@ -61,7 +61,7 @@ class App extends Component {
 
 
     this.setState(prevState => {
-      return {products: [...prevState.products.slice(0, index), newProduct, ...prevState.products.slice(index + 1)]}
+      return {users: [...prevState.users.slice(0, index), newProduct, ...prevState.users.slice(index + 1)]}
      })
   }
 
@@ -70,7 +70,7 @@ class App extends Component {
       <div className="App">
           <Header />
           <div className="main-content">
-            <Main  products={this.state.products}
+            <Main  users={this.state.users}
                    title={this.state.title}
                    handleAddInput={this.handleAddInput}
                    handleDelete={this.handleDelete}
