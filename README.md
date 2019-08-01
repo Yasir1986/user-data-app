@@ -1,4 +1,4 @@
-Follow the steps to run this CURD App
+Follow the steps to run this user-data-app
 
 git clone https://github.com/Yasir1986/user-data-app
 
