@@ -7,3 +7,7 @@ npm install
 npm start
 
 Enjoy
+
+OR
+
+Live deployed link: https://festive-hoover-360983.netlify.com/
